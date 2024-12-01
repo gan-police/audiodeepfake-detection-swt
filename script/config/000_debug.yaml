@@ -1,0 +1,20 @@
+dataset_type: simple
+dataset_dir: ./datasets/simple/
+dataset_kwargs:
+  target_sample_length: 65536
+  load_sample_offset: 0.25
+  random_sample_slice: true
+  references:
+    - ljspeech
+  generators:
+    - full_band_melgan
+batch_size: 3
+num_workers: 0
+model: Wide16Basic
+tasks:
+  -
+    main_module: script.training.wide_x_single
+    output_dir: ./out/wide_basic/
+    stop_epoch: 1
+    num_checkpoints: 0
+    num_validations: 0

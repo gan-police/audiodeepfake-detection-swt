@@ -1,0 +1,29 @@
+dataset_type: loaded
+dataset_dir: /p/scratch/hai_fnetwlet/datasets/loaded_65536
+dataset_kwargs:
+  references:
+    - jsut
+batch_size: 128
+num_workers: 4
+multiprocessing_context: spawn
+persistent_workers: true
+stop_epoch: 40
+num_checkpoints: 1
+num_validations: 20
+tasks:
+  - main_module: script.training.simple_cnn
+    output_dir: /p/project/hai_fnetwlet/models/simple_2d_conv_jsut/1/
+    model: 2d
+    seed: 1
+  - main_module: script.training.simple_cnn
+    output_dir: /p/project/hai_fnetwlet/models/simple_2d_conv_jsut/2/
+    model: 2d
+    seed: 2
+  - main_module: script.training.simple_cnn
+    output_dir: /p/project/hai_fnetwlet/models/simple_2d_conv_jsut/3/
+    model: 2d
+    seed: 3
+  - main_module: script.training.simple_cnn
+    output_dir: /p/project/hai_fnetwlet/models/simple_2d_conv_jsut/4/
+    model: 2d
+    seed: 4

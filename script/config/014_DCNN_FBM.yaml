@@ -1,0 +1,29 @@
+dataset_type: loaded
+dataset_dir: /p/scratch/hai_fnetwlet/datasets/loaded_AB_65536
+dataset_kwargs:
+  references:
+    - ljspeech
+  generators:
+    - full_band_melgan
+batch_size: 128
+num_workers: 2
+pin_memory: true
+persistent_workers: true
+stop_epoch: 20
+num_checkpoints: 0
+num_validations: 20
+model: DCNN
+wavelet: sym5
+tasks:
+  - main_module: script.training.wpt_x_single
+    output_dir: /p/project/hai_fnetwlet/models/wpt_dcnn_FBM_sym5/1/
+    seed: 1
+  - main_module: script.training.wpt_x_single
+    output_dir: /p/project/hai_fnetwlet/models/wpt_dcnn_FBM_sym5/2/
+    seed: 2
+  - main_module: script.training.wpt_x_single
+    output_dir: /p/project/hai_fnetwlet/models/wpt_dcnn_FBM_sym5/3/
+    seed: 3
+  - main_module: script.training.wpt_x_single
+    output_dir: /p/project/hai_fnetwlet/models/wpt_dcnn_FBM_sym5/4/
+    seed: 4

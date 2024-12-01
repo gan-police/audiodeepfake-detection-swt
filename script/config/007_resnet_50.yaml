@@ -1,0 +1,28 @@
+dataset_type: loaded
+dataset_dir: /p/scratch/hai_fnetwlet/datasets/loaded_AB_65536
+dataset_kwargs:
+  references:
+    - jsut
+batch_size: 128
+num_workers: 2
+pin_memory: true
+persistent_workers: true
+stop_epoch: 20
+num_checkpoints: 0
+num_validations: 20
+weighted_loss: true
+wavelet: db4
+reshape: duplicated
+tasks:
+  - main_module: script.training.resnet_50
+    output_dir: /p/project/hai_fnetwlet/models/ResNet50_JSUT/db4/1/
+    seed: 1
+  - main_module: script.training.resnet_50
+    output_dir: /p/project/hai_fnetwlet/models/ResNet50_JSUT/db4/2/
+    seed: 2
+  - main_module: script.training.resnet_50
+    output_dir: /p/project/hai_fnetwlet/models/ResNet50_JSUT/db4/3/
+    seed: 3
+  - main_module: script.training.resnet_50
+    output_dir: /p/project/hai_fnetwlet/models/ResNet50_JSUT/db4/4/
+    seed: 4

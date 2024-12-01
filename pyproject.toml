@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swtaudiofakedetect"
+version = "0.0.1"
+description = "Audio Deepfake Detection using the Stationary Wavelet Transform"
+license = { file = "LICENSE" }
+readme = "README.md"
+authors = [
+  { name = "Niclas Pillath", email = "npillath@stimlabs.dev" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Environment :: GPU :: NVIDIA CUDA :: 12.2",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = [
+    "deepfakes",
+    "GANs",
+    "wavelets",
+    "CNNs",
+    "classification",
+    "deep learning",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "h5py>=3.10.0",
+    "librosa>=0.10.1",
+    "matplotlib>=3.8.2",
+    "numpy",
+    "pandas",
+    "ptwt==0.1.9",
+    "scikit-learn",
+    "scipy",
+    "PyWavelets",
+    "PyYAML",
+    "torch>=2.1.2",
+    "torchvision",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "nox"]
+test = ["pytest", "nox"]
+
+[tool.isort]
+py_version=311
+line_length=120
+force_alphabetical_sort_within_sections=true
+
+[tool.black]
+line_length=120

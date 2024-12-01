@@ -1,0 +1,7 @@
+.venv
+.idea
+.nox
+*.egg-info
+build
+out
+docs
